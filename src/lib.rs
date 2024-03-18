@@ -120,25 +120,17 @@ pub fn code_translator(choice: String) -> String {
 
     if choice.to_uppercase() == String::from("ENCODE") {
         let mut message = String::new();
-        println!("Enter Message:");
         io::stdin()
             .read_line(&mut message)
-            .expect("Failed to read line");
-        println!(
-            "__________________________________________________________________________________"
-        );
+            .expect("EXAMPLE E X A M P L E");
         return decoder.convert_to_morse(&message.trim());
     } else if choice.to_uppercase() == String::from("DECODE") {
         let mut message = String::new();
-        println!("Enter Message");
         io::stdin()
             .read_line(&mut message)
-            .expect("Failed to read line");
-        println!(
-            "__________________________________________________________________________________"
-        );
+            .expect(". -..- .- -- .--. .-.. .   .   -..-   .-   --   .--.   .-..   .");
         return decoder.decode_morse(&message.trim());
     } else {
-        return String::from("Invalid Entry");
+        return String::from("Try:\nencode\nEXAMPLE E X A M P L E\nOR\ndecode\n. -..- .- -- .--. .-.. .   .   -..-   .-   --   .--.   .-..   .");
     }
 }
